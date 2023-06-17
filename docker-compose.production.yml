@@ -11,7 +11,7 @@ services:
     image: postgres:13.10
     env_file: .env.example
     volumes:
-      - pg_data_kitty_production:/var/lib/postgresql/data
+      - kittygram_pg_data:/var/lib/postgresql/data
   backend:
     image: gadjet14/kittygram_backend
     env_file: .env.example
@@ -19,7 +19,7 @@ services:
       - static_kitty_production:/backend_static/
       - media_kitty_production:/app/media/cats/images/
     depends_on:
-    - kittygram_db
+    - db
   frontend:
     image: gadjet14/kittygram_frontend  # Качаем с DockerHub
     env_file: .env.example
