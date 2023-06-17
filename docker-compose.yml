@@ -8,19 +8,19 @@ volumes:
 services:
   db:
     image: postgres:13
-    env_file: .env
+    env_file: .env.example
     volumes:
       - pg_data_kitty:/var/lib/postgresql/data
   backend:
     build: ./backend/
-    env_file: .env
+    env_file: .env.example
     volumes:
       - static_kitty:/backend_static/
       - media_kitty:/app/media/cats/images/
     depends_on:
-      - db
+      - kittygram_db
   frontend:
-    env_file: .env
+    env_file: .env.example
     build: ./frontend/
     command: cp -r /app/build/. /frontend_static/
     volumes:
