@@ -7,11 +7,11 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$'
+SECRET_KEY = os.getenv('TOKEN', 'django-insecure-123')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['projectkittygram.ddns.net','0.0.0.0', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['84.252.139.244','projectkittygram.ddns.net', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
