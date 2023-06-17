@@ -7,7 +7,7 @@ volumes:
 
 services:
   db:
-    image: postgres:13
+    image: postgres:13.10
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgres/data
@@ -17,6 +17,8 @@ services:
     volumes:
       - static:/static/
       - media:/app/media/
+    depends_on:
+      - db
   frontend:
     env_file: .env
     image: gadjet14/kittygram_frontend
@@ -25,9 +27,11 @@ services:
       - static:/static
   gateway:
     image: gadjet14/kittygram_gateway
-    env_file: .env
+#    env_file: .env
     ports:
       - 9000:80
     volumes:
       - static:/static
       - media:/app/media/
+    depends_on:
+      - backend
