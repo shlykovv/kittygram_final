@@ -11,7 +11,7 @@ SECRET_KEY = os.getenv('TOKEN', 'django-insecure-123')
 
 DEBUG = True
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOST').split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOST', '127.0.0.1,projectkittygram.ddns.net').split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
