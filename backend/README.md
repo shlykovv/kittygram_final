@@ -18,8 +18,8 @@
 Для запуска необходимо на создать папку проекта, например `kittygram` и перейти в нее:
 
 ```bash
-mkdir kittygram
-cd kittygram
+mkdir kittygram_final
+cd kittygram_final
 ```
 
 В папку проекта скачиваем файл `docker-compose.production.yml` и запускаем его:
