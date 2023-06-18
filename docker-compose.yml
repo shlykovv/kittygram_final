@@ -16,7 +16,7 @@ services:
     env_file: .env.example
     volumes:
       - static_kitty:/backend_static/
-      - media_kitty:/app/images/
+      - media:/app/media/
     depends_on:
       - db
   frontend:
@@ -32,6 +32,6 @@ services:
       - 9000:80
     volumes:
       - static_kitty:/staticfiles/
-      - media:/media
+      - media:/app/media/
     depends_on:
       - backend

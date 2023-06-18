@@ -17,7 +17,7 @@ services:
     env_file: .env.example
     volumes:
       - static_kitty_production:/backend_static/
-      - media:/app/images/
+      - media:/app/media/
     depends_on:
     - db
   frontend:
@@ -31,6 +31,6 @@ services:
     # env_file: .env
     volumes:
       - static_kitty_production:/staticfiles/
-      - media:/media
+      - media:/app/media/
     ports:
       - 9000:80
