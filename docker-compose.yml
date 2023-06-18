@@ -3,7 +3,7 @@ version: '3'
 volumes:
   kittygram_pg_data:
   static_kitty:
-  media_kitty:
+  media:
 
 services:
   db:
@@ -16,7 +16,7 @@ services:
     env_file: .env.example
     volumes:
       - static_kitty:/backend_static/
-      - media_kitty:/app/media/cats/images/
+      - media_kitty:/app/images/
     depends_on:
       - db
   frontend:
@@ -32,6 +32,6 @@ services:
       - 9000:80
     volumes:
       - static_kitty:/staticfiles/
-      - media_kitty:/media
+      - media:/media
     depends_on:
       - backend
