@@ -31,6 +31,6 @@ services:
     # env_file: .env
     volumes:
       - static_kitty_production:/staticfiles/
-      - media_kitty_production:/media/cats/images/
+      - media_kitty_production:/media
     ports:
       - 9000:80
