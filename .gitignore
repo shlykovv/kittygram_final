@@ -4,6 +4,8 @@ __pycache__/
 *$py.class
 node_modules/
 build/
+db.sqlite3.bak
+db.sqlite3
 
 # C extensions
 *.so
